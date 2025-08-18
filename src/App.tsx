@@ -7,13 +7,13 @@ import Tech from "./components/Tech";
 import Works from "./components/Works";
 import Feedbacks from "./components/Feedbacks";
 import Contact from "./components/Contact";
-import StarsCanvas from "./components/StarsCanvas";
+// import StarsCanvas from "./components/StarsCanvas";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+        <div className="flex justify-center">
           <Navbar />
           <Hero />
         </div>
@@ -24,7 +24,7 @@ const App = () => {
         <Feedbacks />
         <div>
           <Contact />
-          <StarsCanvas />
+          {/* <StarsCanvas /> */}
         </div>
       </div>
     </BrowserRouter>

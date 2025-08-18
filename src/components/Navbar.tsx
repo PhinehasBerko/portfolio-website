@@ -2,28 +2,29 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../style";
 import { navLinks } from "../constants/index";
-import { logo, menu, close } from "../assets";
+import { menu, close, logo_2 } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center justify-between py-5 fixed top-0 z-20 bg-primary`}
+      className={`${styles.paddingX} w-4/5 flex items-center justify-between mt-5 fixed z-20 bg-transparent rounded-full  outline-1 outline-slate-50 outline-dashed `}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="w-full flex justify-between items-center max-w-7xl mx-2 xs:mx-auto ">
         {/* Logo */}
         <Link
           to={"/"}
-          className="flex gap-4 items-center"
+          className="flex gap-2 items-center"
           onClick={() => {
             setActive(""); // track where we are currently on the page
             window.scrollTo(0, 0); // scroll to the top of the page
           }}
         >
-          <img src={logo} alt="logo" className="w-7 object-contain" />
-          <p className="font-bold flex text-[18px]">
+          <img src={logo_2} alt="logo" className="w-10 h-10 rounded-full" />
+          <p className="font-bold flex text-[12px] sm:text-[18px]">
             Phinehas &nbsp; <span>| Software Dev</span>
+            {/* PhinyDev✨ */}
           </p>
         </Link>
       </div>
@@ -42,7 +43,7 @@ const Navbar = () => {
         ))}
       </ul>
       {/* Menu / Hamburger Menu */}
-      <div className="sm:hidden flex">
+      <div className="sm:hidden flex px-6">
         <img
           src={toggle ? close : menu}
           className="w-[28px] h-[28px] cursor-pointer"
